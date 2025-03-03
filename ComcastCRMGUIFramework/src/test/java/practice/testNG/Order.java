@@ -2,7 +2,7 @@ package practice.testNG;
 
 import org.testng.annotations.Test;
 
-public class OrderTest {
+public class Order {
 	
 	@Test
 	public void createOrderTest()

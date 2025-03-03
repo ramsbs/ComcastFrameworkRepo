@@ -16,10 +16,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
 import com.comcast.crm.BaseTest.BaseClass;
 import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
+import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
 import com.comcast.crm.objectrepositoryutility.CreatingNewOrganizationPage;
 import com.comcast.crm.objectrepositoryutility.HomePage;
@@ -33,6 +35,7 @@ public class CreateOrgTest extends BaseClass {
 	public void createOrgTest() throws EncryptedDocumentException, IOException, InterruptedException {
 
 		// read testscript data from Excel
+		UtilityClassObject.getTest().log(Status.INFO,"read data from excel");
 		String orgname = eLib.getDataFromExcel("productOrg", 4, 2) + jLib.getRandomNumber();
 
 		// step2: navigate to organization module

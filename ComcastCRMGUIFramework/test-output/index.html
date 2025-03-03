@@ -51,12 +51,12 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\adhes\OneDrive\Desktop\Nidhu\ComcastCRMGUIFramework\listener2.xml</span>
+                    <span>C:\Users\adhes\git\Automation_TL\ComcastCRMGUIFramework\suite_DistributedparallelExecution.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">9 methods,   9 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -127,6 +127,26 @@
                         <a href="#" panel-name="suite-Suite" title="com.crm.comcast.CreateContactTest.createContactTest" class="method navigator-link" hash-for-method="createContactwithDepart">createContactwithDepart</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.crm.comcast.OrgTest.CreateOrgTest" class="method navigator-link" hash-for-method="createOrgPhoneNumber">createOrgPhoneNumber</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.crm.comcast.OrgTest.CreateOrgTest" class="method navigator-link" hash-for-method="createOrgTest">createOrgTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.crm.comcast.OrgTest.CreateOrgTest" class="method navigator-link" hash-for-method="createOrgWithIndustris">createOrgWithIndustris</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.crm.comcast.OrgTest.CreateOrgTest" class="method navigator-link" hash-for-method="createOrgWithMobileNumber">createOrgWithMobileNumber</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
@@ -139,6 +159,42 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.crm.comcast.OrgTest.CreateOrgTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createOrgPhoneNumber">
+                  </a> <!-- createOrgPhoneNumber -->
+                  <span class="method-name">createOrgPhoneNumber</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="createOrgTest">
+                  </a> <!-- createOrgTest -->
+                  <span class="method-name">createOrgTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="createOrgWithIndustris">
+                  </a> <!-- createOrgWithIndustris -->
+                  <span class="method-name">createOrgWithIndustris</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="createOrgWithMobileNumber">
+                  </a> <!-- createOrgWithMobileNumber -->
+                  <span class="method-name">createOrgWithMobileNumber</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -185,21 +241,23 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\adhes\OneDrive\Desktop\Nidhu\ComcastCRMGUIFramework\listener2.xml</span>
+            <span class="header-content">C:\Users\adhes\git\Automation_TL\ComcastCRMGUIFramework\suite_DistributedparallelExecution.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;listeners&gt;
-    &lt;listener class-name=&quot;com.comcast.crm.listenerUtility.ListenerImplimentationClass&quot;/&gt;
-  &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Test-1&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.crm.comcast.OrgTest.CreateOrgTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test-1 --&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Test-2&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.crm.comcast.CreateContactTest.createContactTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- Test-2 --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -211,7 +269,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Test-1 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Test-2 (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -237,32 +298,48 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(9);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createContactWithOrg')
-data.setCell(0, 2, 'com.crm.comcast.CreateContactTest.createContactTest')
-data.setCell(0, 3, 26104);
+data.setCell(0, 1, 'createOrgPhoneNumber')
+data.setCell(0, 2, 'com.crm.comcast.OrgTest.CreateOrgTest')
+data.setCell(0, 3, 52156);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'createContactWithSupportDate')
+data.setCell(1, 1, 'createContactTest')
 data.setCell(1, 2, 'com.crm.comcast.CreateContactTest.createContactTest')
-data.setCell(1, 3, 14474);
+data.setCell(1, 3, 52155);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'createContactTest')
+data.setCell(2, 1, 'createContactWithOrg')
 data.setCell(2, 2, 'com.crm.comcast.CreateContactTest.createContactTest')
-data.setCell(2, 3, 13338);
+data.setCell(2, 3, 34615);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'createContactwithDepart')
-data.setCell(3, 2, 'com.crm.comcast.CreateContactTest.createContactTest')
-data.setCell(3, 3, 11767);
+data.setCell(3, 1, 'createOrgTest')
+data.setCell(3, 2, 'com.crm.comcast.OrgTest.CreateOrgTest')
+data.setCell(3, 3, 17181);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'createContactWithTitle')
-data.setCell(4, 2, 'com.crm.comcast.CreateContactTest.createContactTest')
-data.setCell(4, 3, 11093);
+data.setCell(4, 1, 'createOrgWithMobileNumber')
+data.setCell(4, 2, 'com.crm.comcast.OrgTest.CreateOrgTest')
+data.setCell(4, 3, 13932);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'createContactWithSupportDate')
+data.setCell(5, 2, 'com.crm.comcast.CreateContactTest.createContactTest')
+data.setCell(5, 3, 13785);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'createOrgWithIndustris')
+data.setCell(6, 2, 'com.crm.comcast.OrgTest.CreateOrgTest')
+data.setCell(6, 3, 12631);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'createContactwithDepart')
+data.setCell(7, 2, 'com.crm.comcast.CreateContactTest.createContactTest')
+data.setCell(7, 3, 11514);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'createContactWithTitle')
+data.setCell(8, 2, 'com.crm.comcast.CreateContactTest.createContactTest')
+data.setCell(8, 3, 10876);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -293,77 +370,187 @@ return data;
                 <span class="method-name">configBS</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.OrgTest.CreateOrgTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">configBC</span>
-                <span class="method-start">18 ms</span>
+                <span class="method-start">27 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.CreateContactTest.createContactTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">configBC</span>
+                <span class="method-start">27 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">configBM</span>
-                <span class="method-start">2636 ms</span>
+                <span class="method-start">14930 ms</span>
               </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.OrgTest.CreateOrgTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">configBM</span>
+                <span class="method-start">15611 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">createOrgPhoneNumber</span>
+                <span class="method-start">15967 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.CreateContactTest.createContactTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">createContactTest</span>
-                <span class="method-start">2865 ms</span>
+                <span class="method-start">15967 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.OrgTest.CreateOrgTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">congigAM</span>
-                <span class="method-start">16203 ms</span>
+                <span class="method-start">68133 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.CreateContactTest.createContactTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">congigAM</span>
+                <span class="method-start">68133 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">configBM</span>
-                <span class="method-start">18009 ms</span>
+                <span class="method-start">71634 ms</span>
               </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.OrgTest.CreateOrgTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">configBM</span>
+                <span class="method-start">71652 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.CreateContactTest.createContactTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">createContactWithOrg</span>
-                <span class="method-start">20779 ms</span>
+                <span class="method-start">75456 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.OrgTest.CreateOrgTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">createOrgTest</span>
+                <span class="method-start">75465 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">congigAM</span>
-                <span class="method-start">46890 ms</span>
+                <span class="method-start">92646 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">configBM</span>
-                <span class="method-start">48981 ms</span>
+                <span class="method-start">94913 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">createOrgWithIndustris</span>
+                <span class="method-start">98429 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.CreateContactTest.createContactTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">congigAM</span>
+                <span class="method-start">110081 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.OrgTest.CreateOrgTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">congigAM</span>
+                <span class="method-start">111060 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.CreateContactTest.createContactTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">configBM</span>
+                <span class="method-start">112115 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.OrgTest.CreateOrgTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">configBM</span>
+                <span class="method-start">113205 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.CreateContactTest.createContactTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">createContactWithSupportDate</span>
-                <span class="method-start">49198 ms</span>
+                <span class="method-start">115510 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.OrgTest.CreateOrgTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">createOrgWithMobileNumber</span>
+                <span class="method-start">117641 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.CreateContactTest.createContactTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">congigAM</span>
-                <span class="method-start">63672 ms</span>
+                <span class="method-start">129305 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">configBM</span>
-                <span class="method-start">65545 ms</span>
+                <span class="method-start">131526 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">createContactWithTitle</span>
-                <span class="method-start">68768 ms</span>
-              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.OrgTest.CreateOrgTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">congigAM</span>
-                <span class="method-start">79868 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">configBM</span>
-                <span class="method-start">82001 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">createContactwithDepart</span>
-                <span class="method-start">85434 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">congigAM</span>
-                <span class="method-start">97205 ms</span>
+                <span class="method-start">131580 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">configAC</span>
-                <span class="method-start">99224 ms</span>
+                <span class="method-start">133702 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.crm.comcast.CreateContactTest.createContactTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">createContactWithTitle</span>
+                <span class="method-start">135382 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">congigAM</span>
+                <span class="method-start">146260 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">configBM</span>
+                <span class="method-start">148120 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">createContactwithDepart</span>
+                <span class="method-start">151194 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">congigAM</span>
+                <span class="method-start">162710 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">configAC</span>
+                <span class="method-start">164779 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">configAS</span>
-                <span class="method-start">99833 ms</span>
+                <span class="method-start">165390 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

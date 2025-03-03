@@ -3,6 +3,8 @@ package com.comcast.crm.generic.fileutility;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -35,5 +37,25 @@ public class ExcelUtility {
 		wb.write(fos);
 		wb.close();
 	}
+	
+	
+	public List<String> getMulDataFromEcxel(String sheetName,int rowNum,int colNum) throws EncryptedDocumentException, IOException
+	{
+		FileInputStream fis=new FileInputStream("./testData/Org.xlsx") ;
+		
+		List<String> all_Data=new ArrayList<>();
+		Workbook book=WorkbookFactory.create(fis) ;
+		for(int i=1;i<=rowNum;i++)
+		{
+			for(int j=0;j<=colNum;j++)
+			{
+				String data=book.getSheet(sheetName).getRow(i).getCell(j).getStringCellValue();
+				all_Data.add(data);
+			}
+		}
+		return all_Data;
+		
+	}
+	
 
 }

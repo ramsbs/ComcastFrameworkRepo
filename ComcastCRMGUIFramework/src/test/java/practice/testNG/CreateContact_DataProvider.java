@@ -3,7 +3,7 @@ package practice.testNG;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class CreateContact_DataProvider_Test {
+public class CreateContact_DataProvider {
 	@Test(dataProvider="getData")
 	public void createContactTest(String firstName, String lastName)
 	{

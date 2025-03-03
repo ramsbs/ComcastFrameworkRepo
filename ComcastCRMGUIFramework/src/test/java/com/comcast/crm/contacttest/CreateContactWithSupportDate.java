@@ -1,8 +1,11 @@
-package com.comcast.crm.orgtest;
+package com.comcast.crm.contacttest;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 
@@ -17,26 +20,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 
 import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
-import com.comcast.crm.objectrepositoryutility.CreatingNewOrganizationPage;
-import com.comcast.crm.objectrepositoryutility.HomePage;
+import com.comcast.crm.objectrepositoryutility.ContactInformationPage;
+import com.comcast.crm.objectrepositoryutility.ContactPage;
+import com.comcast.crm.objectrepositoryutility.CreateNewContactPage;
 import com.comcast.crm.objectrepositoryutility.LoginPage;
-import com.comcast.crm.objectrepositoryutility.OrganizationInformationPage;
-import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
 
-public class CreateOrganizationWithIndustriesTest {
+public class CreateContactWithSupportDate {
 
-	public static void main(String[] args) throws IOException, InterruptedException {
-		//read common data from excel
+	public static void main(String[] args) throws InterruptedException, IOException {
 		FileUtility fLib=new FileUtility();
 		ExcelUtility eLib=new ExcelUtility();
 		JavaUtility jLib=new JavaUtility();
 		WebDriverUtility wLib=new WebDriverUtility();
+		
+		//read common data from excel
 		
 		String BROWSER = fLib.getDataFromPropertiesFile("Browser");
 		String u = fLib.getDataFromPropertiesFile("url");
@@ -45,14 +47,11 @@ public class CreateOrganizationWithIndustriesTest {
 		
 		
 		
-		
 		// read testscript data from Excel
 		
-		 String orgname=eLib.getDataFromExcel("productOrg", 4, 2)+jLib.getRandomNumber();
-		 String industries=eLib.getDataFromExcel("productOrg", 4, 3);
-		 String type=eLib.getDataFromExcel("productOrg", 4, 4);
+		 String orgname = eLib.getDataFromExcel("productOrg", 4, 1)+jLib.getRandomNumber();
+		 String lastname = eLib.getDataFromExcel("productOrg", 4, 2)+jLib.getRandomNumber();
 		 
-		 //crossbroser testing
 		 WebDriver driver=null;
 			if(BROWSER.equals("Chrome"))
 			{
@@ -67,58 +66,58 @@ public class CreateOrganizationWithIndustriesTest {
 				driver=new EdgeDriver();
 			}
 			
-			//step 1: login to app
 			wLib.waitForPageToLoad(driver);
-			
 			Thread.sleep(2000);
 			driver.get(u);
-			
 			LoginPage lp=new LoginPage(driver);
 			lp.loginToapp("admin", "admin");
 			
+			
 			// step2: navigate to organization module
-			HomePage hp=new HomePage(driver);
-			hp.getOrgLink().click();
+			ContactPage cp=new ContactPage(driver);
+			cp.getContactlink().click();
+			
 			
 			//step3: click on create organization Button
-			OrganizationsPage op=new OrganizationsPage(driver);
-			 op.getCreateNewOrgBtn().click();
+			cp.getCreatecontactbtn().click();
+			//driver.findElement(By.xpath("//img[@title=\"Create Contact...\"]")).click();
 			
-			//step4: enter all the details & create new organization
-			 CreatingNewOrganizationPage cnop=new CreatingNewOrganizationPage(driver);
-			 cnop.createOrg(orgname);
+			//step4: enter all the detail create new contact
+			String startDate = jLib.getSystemDateYYYYDDMM();
+			String endDate = jLib.getRequiredDateYYYYDDMM(20);
+			
+			CreateNewContactPage ccp=new CreateNewContactPage(driver);
+			ccp.createContact(lastname, startDate, endDate);
+			ContactInformationPage cip=new ContactInformationPage(driver);
+			  String actSuptStartDate = cip.getActualStartDateinCnt();
+			System.out.println(actSuptStartDate);
+			 if(actSuptStartDate.equals(startDate))
+			 {
+				 System.out.println(startDate+" start date verified and pass");
+			 }
+			 else
+			 {
+				 System.out.println(startDate+ "start date verified and fail");
+			 }
+			 
+			//step6: verify the support end Date
+			 
+			  String actSupprtEndDate = cip.getActualStartEndDateinCnt();
+			 System.out.println(actSupprtEndDate);
+			 if(actSupprtEndDate.equals(endDate))
+			 {
+				 System.out.println(endDate + " end Date verified and pass");
+			 }
+			 else
+			 {
+				 System.out.println(endDate+ "end Date verified and Fail");
+			 }
+			 
+			 
+			 
+			 
 			 
 			
-			
-			//step4: in industrity dpodown select any one of option
-			 cnop.createOrgNameWithIndustryandType(orgname, industries, type);
-			
-			 
-			//verify the dropdown industries and type info
-			 OrganizationInformationPage oip=new OrganizationInformationPage(driver);
-			 String actin = oip.getactIndustriesText();
-			 if(actin.contains(industries)) { 
-				 System.out.println(industries+"is created==PASS"); 
-				 } 
-			 else { 
-				 System.out.println(industries+"is not created==FAIL"); 
-				 }
-			
-			
-			//verify the dropdown industries and type info
-			
-			  String actType = oip.getActTypetext();
-			  if(actType.contains(type))
-			    {
-				 System.out.println(type +"is created==PASS"); 
-				 }
-			 else { 
-				 System.out.println(type +"is not created==FAIL"); 
-				 }
-			 
-			 
-		
-
 	}
 
 }

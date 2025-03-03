@@ -17,7 +17,7 @@ import com.comcast.crm.BaseTest.BaseClass;
 
 import junit.framework.Assert;
 
-public class SampleReportTest  {
+public class SampleReport  {
 
 	ExtentReports report;
 	@BeforeSuite

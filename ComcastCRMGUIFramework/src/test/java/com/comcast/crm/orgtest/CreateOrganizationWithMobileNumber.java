@@ -27,7 +27,7 @@ import com.comcast.crm.objectrepositoryutility.LoginPage;
 import com.comcast.crm.objectrepositoryutility.OrganizationInformationPage;
 import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
 
-public class CreateOrganizationWithMobileNumberTest {
+public class CreateOrganizationWithMobileNumber {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		// create Object

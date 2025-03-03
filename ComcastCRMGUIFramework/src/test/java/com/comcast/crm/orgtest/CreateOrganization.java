@@ -32,7 +32,7 @@ import com.comcast.crm.objectrepositoryutility.LoginPage;
 import com.comcast.crm.objectrepositoryutility.OrganizationInformationPage;
 import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
 
-public class CreateOrganizationTest extends BaseClass {
+public class CreateOrganization extends BaseClass {
 
 	@Test
 	public void createOrgTest() throws EncryptedDocumentException, IOException, InterruptedException {

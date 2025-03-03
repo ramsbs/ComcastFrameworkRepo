@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 
 
-public class HomePageTest {
+public class HomePage {
 	@Test
 	
 	public void HomePageTest(Method mtd)

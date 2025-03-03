@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import com.comcast.crm.BaseTest.BaseClass;
 
-public class CreateContactTest extends BaseClass{
+public class CreateContact extends BaseClass{
 
 	@Test
 	public void hi() {

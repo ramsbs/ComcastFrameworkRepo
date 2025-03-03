@@ -26,7 +26,7 @@ import com.comcast.crm.objectrepositoryutility.OrganizationChildWindow;
 import com.comcast.crm.objectrepositoryutility.OrganizationInformationPage;
 import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
 
-public class CreateOportunityTest extends BaseClass {
+public class CreateOportunity extends BaseClass {
 
 	@Test
 

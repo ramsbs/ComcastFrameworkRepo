@@ -249,5 +249,9 @@ public class WebDriverUtility {
 			wait.until(ExpectedConditions.titleContains(data));
 		}
 		
+		public void toMaximize(WebDriver driver)
+		{
+			driver.manage().window().maximize();
+		}
 		
 }
